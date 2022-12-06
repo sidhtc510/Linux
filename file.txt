@@ -1,0 +1,13 @@
+Создал файл scriptANATOLII.sh
+В нем
+
+#!/bin/bash
+for RUN in {1..10}
+do
+touch $RUN`date "+%H%M%S".txt`
+done
+
+В crontab
+*/15 * * * * /opt/43_44_morning/Anatolii_Sydorenko/scriptANATOLII.sh
+
+
