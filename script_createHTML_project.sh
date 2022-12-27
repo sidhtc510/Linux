@@ -11,6 +11,10 @@
 # create index.html #
 #                   #
 #####################
+FILE=index.html
+if [ -f "$FILE" ]; then
+    echo "$FILE exists."
+else 
 echo '<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,6 +40,8 @@ echo '<!DOCTYPE html>
 
 </html>
 ' > index.html
+fi
+
 
 
 ########################################################
@@ -43,6 +49,12 @@ echo '<!DOCTYPE html>
 # create directory styles & clearStyle.css & style.css #
 #                                                      #
 ########################################################
+
+FILECLEARSTYLE=styles/clearStyle.css
+if [ -f "$FILECLEARSTYLE" ]; then
+    echo "$FILECLEARSTYLE exists."
+else 
+
 mkdir styles
 echo '/* Указываем box sizing */
 *,
@@ -123,18 +135,33 @@ select {
   }
 }
 ' > styles/clearStyle.css
+fi
 
+
+FILESTYLE=styles/style.css
+if [ -f "$FILESTYLE" ]; then
+echo "$FILESTYLE exists."
+else
 echo 'body {
     font-family: 'Nunito', sans-serif;
     /* font-family: 'Roboto', sans-serif; */
 }
 '> styles/style.css
 
+fi
 
 ########################################
 #                                      #
 # create directory scripts & script.js #
 #                                      #
 ########################################
+
+FILESCRIPT=scripts/script.js
+if [ -f "$FILESCRIPT" ]; then
+    echo "$FILESCRIPT exists."
+else 
+
 mkdir scripts         
 touch scripts/script.js
+
+fi
